@@ -1,0 +1,62 @@
+|<script id="templateProduct", type="text/x-handlebars-template">
+|  {{#each products}}
+|    <li class="product-cell">
+|      <div class="product-cell--wrapper">
+|        <div data-gallery="" class="gallery-cell">
+|        <a href="" data-gallery-main="" class="gallery-cell--main">
+|        <img src="img/3.jpg" alt=""></a>
+|        <a href="" data-gallery-left="" class="gallery-cell--left"></a>
+|          <ul data-gallery-list="" class="gallery-cell--list">
+|            <li class="gallery-cell--list--item">
+|             <a href=""><img src="img/1.jpg" alt=""></a>
+|           </li>
+|           <li class="gallery-cell--list--item">
+|             <a href="">
+|             <img src="img/2.jpg" alt=""></a>
+|           </li>
+|           <li class="gallery-cell--list--item">
+|             <a href=""><img src="img/3.jpg" alt=""></a>
+|           </li>
+|          </ul>
+|       <a href="" data-gallery-right="" class="gallery-cell--right"></a>
+|        </div>
+|        <div class="product-cell--wrapper--info"><a href="{{id}}" class="product-cell--title">{{title}}</a>
+|          <p class="product-cell--desc">
+|            {{description}}
+|          </p>
+|          <div class="product-cell--footer">
+|            <form>
+|              <div class="quantity">
+|                <input type="number", min="0", max="{{quantity}}", step="1", value="1", maxlength="2">
+|              </div>
+|              <button class="product-cell--btn" data-id = "{{id}}">
+|                <i class="product-cell--btn--price">${{price}}</i>
+|                <i class="product-cell--btn--cart"></i>
+|              </button>
+|            </form>
+|          </div>
+|        </div>
+|      </div>
+|    </li>
+|  {{/each}}
+|</script>
+
+
+//-|{{#each products}}
+//- li.product-cell
+//-   .product-cell--wrapper
+//-     include ./gallery-cell.jade
+//-     script( id="templateProduct", type="text/x-handlebars-template" )
+//-       
+//-         .product-cell--wrapper--info(data-category = "({{category}})")
+//-           a(href="#").product-cell--title |{{title}}
+//-           p.product-cell--desc
+//-             |{{description}}
+//-           .product-cell--footer
+//-             form
+//-               .quantity
+//-                 input(type="number", data-quantity="{{quantity}}", min="1", max="{{quantity}}", step="1", value="1", maxlength="2")
+//-               button.product-cell--btn()
+//-                 i.product-cell--btn--price |{{price}}
+//-                 i.product-cell--btn--cart
+//-|{{/each}}

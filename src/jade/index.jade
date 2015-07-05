@@ -1,0 +1,14 @@
+doctype html
+html(lang="ru")
+	include ./modules/head.jade
+	body
+		main.row.page_wrapper
+			.l-sidebar.small-8.medium-8.large-2.xlarge-2.columns.right
+				include ./modules/basket.jade
+			.l-catalog.small-8.medium-8.large-8.xlarge-6.columns.left
+				include ./modules/categories.jade
+				include ./modules/filters.jade
+				ul#products_container.large-block-grid-3.medium-block-grid-2.small-block-grid-1.text-center
+					include ./modules/product-cell.jade
+		include ./modules/footer.jade
+

@@ -1,0 +1,33 @@
+.basket#basket_wrapper
+  .basket--header
+    h3.basket--header--title Shopping basket
+    .basket--header--cart#basket_btn
+      i#basket_count 0
+  #basket_container
+    |<script id="templateBasket" type="text/x-handlebars-template">
+    |{{#each basketList}}
+    |    <div class="basket--item">
+    |      <div class="basket--item--name">{{title}}</div>
+    |      <div class="quantity">
+    |        <input type="number" min="0" max="{{quantity}}" step="1"
+    |        value="{{productQuantity}}" maxlength="2">
+    |      </div>
+    |      <div class="basket--item--price">{{price}}</div>
+    |    </div>
+    |{{/each}}
+    |</script>
+  #basket_total_price.basket--total-price $ 0 
+
+
+//- .basket#basket_wrapper
+//-   .basket--header
+//-     h3.basket--header--title Shopping basket
+//-     .basket--header--cart#basket_btn
+//-       i#basket_count 2
+//-   #basket_container
+//-     .basket--item
+//-       .basket--item--name Xiaomi band
+//-       .quantity
+//-         input(type="number", data-quantity="61", min="1", max="99", step="1", value="1", maxlength="2")
+//-       .basket--item--price $ 222
+//-   #basket_total.basket--total-price $ 666

@@ -1,0 +1,69 @@
+
+.centered-img {
+  z-index: 1;
+  position: absolute;
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  margin: auto;
+}
+
+.gallery-arrow {
+  display: inline-block;
+  height: 50px;
+  width: 20px;
+  opacity: 0.8;
+
+  background-color: #fff;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.gallery-cell {
+  height: 265px;
+
+  &--main {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 210px;
+
+    & > img {
+      @extend .centered-img;
+      max-height: 210px;
+    }
+  }
+
+  &--list {
+    display: inline-block;
+    margin: 2px auto;
+    padding: 0;
+    font-size: 0;
+
+    &--item {
+      position: relative;
+      display: inline-block;
+      height: 50px;
+      width: 50px;
+      margin: 0 2px;
+      border: 1px solid rgba(#333, 0.5);
+
+      & > a > img {
+        @extend .centered-img;
+      }
+    }
+  }
+
+  &--left {
+    @extend .gallery-arrow;
+    background: url("../img/prod-gal-al.png") no-repeat center;
+  }
+
+  &--right {
+    @extend .gallery-arrow;
+    background: url("../img/prod-gal-ar.png") no-repeat center;
+  }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>AmazonKiller</title>
+    <link href="css/foundation.css" rel="stylesheet">
+    <link href="css/app.min.css" rel="stylesheet">
+    <link href="bower_components/Stepper/jquery.fs.stepper.css" rel="stylesheet">
+  </head>
+  <body>
+    <main class="row page_wrapper">
+      <div class="l-sidebar small-8 medium-8 large-2 xlarge-2 columns right">
+        <div id="basket_wrapper" class="basket">
+          <div class="basket--header">
+            <h3 class="basket--header--title">Shopping basket</h3>
+            <div id="basket_btn" class="basket--header--cart"><i id="basket_count">0</i></div>
+          </div>
+          <div id="basket_container">
+            <script id="templateBasket" type="text/x-handlebars-template">
+            {{#each basketList}}
+               <div class="basket--item">
+                 <div class="basket--item--name">{{title}}</div>
+                 <div class="quantity">
+                   <input type="number" min="0" max="{{quantity}}" step="1"
+                   value="{{productQuantity}}" maxlength="2">
+                 </div>
+                 <div class="basket--item--price">{{price}}</div>
+               </div>
+            {{/each}}
+            </script>
+          </div>
+          <div id="basket_total_price" class="basket--total-price">$ 0 </div>
+        </div>
+      </div>
+      <div class="l-catalog small-8 medium-8 large-8 xlarge-6 columns left">
+        <ul id="categories_container" class="inline-list categories">
+          <li class="categories--title">Please choose category:</li><script id="templateCategories" type="text/x-handlebars-template">
+          {{#each categories}}
+          <li class ="categories--option">
+           <a href="{{id}}" alt="{{title}}" >
+            {{title}}
+           </a>
+          </li>
+          {{/each}}
+          </script>
+        </ul>
+        <div class="filters">Sort by
+          <select class="filters--select">
+            <option value="none">None</option>
+            <option value="t1">Sorting by price &#8593;</option>
+            <option value="t1">Sorting by price &#8595;</option>
+          </select>
+        </div>
+        <ul id="products_container" class="large-block-grid-3 medium-block-grid-2 small-block-grid-1 text-center">
+          <script id="templateProduct", type="text/x-handlebars-template">
+           {{#each products}}
+             <li class="product-cell">
+               <div class="product-cell--wrapper">
+                 <div data-gallery="" class="gallery-cell">
+                 <a href="" data-gallery-main="" class="gallery-cell--main">
+                 <img src="img/3.jpg" alt=""></a>
+                 <a href="" data-gallery-left="" class="gallery-cell--left"></a>
+                   <ul data-gallery-list="" class="gallery-cell--list">
+                     <li class="gallery-cell--list--item">
+                      <a href=""><img src="img/1.jpg" alt=""></a>
+                    </li>
+                    <li class="gallery-cell--list--item">
+                      <a href="">
+                      <img src="img/2.jpg" alt=""></a>
+                    </li>
+                    <li class="gallery-cell--list--item">
+                      <a href=""><img src="img/3.jpg" alt=""></a>
+                    </li>
+                   </ul>
+                <a href="" data-gallery-right="" class="gallery-cell--right"></a>
+                 </div>
+                 <div class="product-cell--wrapper--info"><a href="{{id}}" class="product-cell--title">{{title}}</a>
+                   <p class="product-cell--desc">
+                     {{description}}
+                   </p>
+                   <div class="product-cell--footer">
+                     <form>
+                       <div class="quantity">
+                         <input type="number", min="0", max="{{quantity}}", step="1", value="1", maxlength="2">
+                       </div>
+                       <button class="product-cell--btn" data-id = "{{id}}">
+                         <i class="product-cell--btn--price">${{price}}</i>
+                         <i class="product-cell--btn--cart"></i>
+                       </button>
+                     </form>
+                   </div>
+                 </div>
+               </div>
+             </li>
+           {{/each}}
+          </script>
+        </ul>
+      </div>
+    </main>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/Stepper/jquery.fs.stepper.min.js"></script>
+    <script src="js/handlebars.min.js"></script>
+    <script src="js/basketAdoptive.js"></script>
+    <script src="js/categories.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/basket.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

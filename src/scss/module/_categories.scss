@@ -1,0 +1,8 @@
+.categories {
+  .inline-list {
+    margin-left: 0;
+    & > li {
+      float: none;
+    }
+  }
+}

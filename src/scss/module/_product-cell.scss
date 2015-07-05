@@ -1,0 +1,135 @@
+.product-cell {
+  max-height: 455px;
+  min-height: 455px;
+  margin-top: 32px;
+  text-align: center;
+  transition: all 300ms ease-out;
+
+    @media #{$small-up} {
+      max-height: 415px;
+    }
+
+    @media #{$xlarge-up} {
+      max-height: 455px;
+    }
+
+  &--wrapper {
+    position: relative;
+    display: inline-block;
+    max-height: 455px;
+    min-height: 455px;
+    overflow: hidden;
+
+    box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    transition: all 500ms ease-out;
+
+    /* This code for unfolding cell at hover */
+    &:hover {
+      max-height: none;
+      min-height: none;
+
+      .product-cell--footer {
+        position: relative;
+        top: 0;
+        bottom: 0;
+
+        padding: 0;
+        box-shadow: none;
+      }
+      .product-cell--wrapper--info {
+        position: relative;
+      }
+    }
+
+    &--info {
+      z-index: 2;
+
+      padding: 0 15px 20px 15px;
+      background-color: #fff;
+    }
+  } 
+
+  &--title {
+    padding: 14px 0 9px 0;
+
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  &--desc {
+    clear: both;
+
+    display: block;
+    min-height: 95px;
+    padding-bottom: 5px;
+    overflow: hidden;
+
+    font-size: 12px;
+    text-align: justify;
+  }
+
+  &--btn {
+    float: right;
+
+    display: block;
+    width: 108px;
+    height: 32px;
+    margin: 4px 0 0 0;
+
+    border-radius: 5px;
+    background: linear-gradient(0deg, #059b01 0%, #06ee00 100%);
+    box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.35);
+    transition: all 300ms ease-out;
+
+    &:hover {
+      background: linear-gradient(50deg, #059b01 0%, #06ee00 85%);
+      opacity: 0.8;
+    }
+
+    &--price {
+      position: absolute;
+      top: 20%;
+      right: 38%;
+
+      display: block;
+      color: #fff;
+      font-size: 15px;
+      font-style: normal;
+    }
+
+    &--cart {
+      position: absolute;
+      top: 2px;
+      right: 3px;
+
+      display: block;
+      width: 30px;
+      height: 30px;
+
+      background: url('../img/buy-btn.png') no-repeat center;
+      border-left: 1px solid #fff;
+    }
+  }
+}
+
+.product-cell--footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: inline-block;
+  width: 100%;
+  padding: 0 15px 20px 15px;
+
+  background: #fff;
+  box-shadow: 0px -12px 36px 11px white;
+
+/*   @media #{$large-up} {
+  top: 133px;
+  bottom: none;
+}*/
+}

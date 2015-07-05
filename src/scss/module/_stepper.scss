@@ -1,0 +1,77 @@
+.quantity.stepper, .quantity {
+  display: inline-block;
+  width: 45px;
+  height: 24px;
+
+  border-radius: 0;
+  vertical-align: middle;
+
+    @media #{$small-up} {
+      float: left;
+      margin-left: 10px;
+    }
+    @media #{$xlarge-up} {
+      float: none;
+      margin-left: 0;
+    }
+
+  input.stepper-input {
+    width: 45px;
+    height: 24px;
+    padding: 4px;
+
+    background-color: #fff;
+    border-radius: 0;
+  }
+
+  .stepper {
+    display: inline-block;
+    height: 24px;
+    width: 45px;
+    margin: 11px 0;
+    border-radius: 0;
+
+    &-arrow {
+      border: 0;
+      width: 16px;
+      height: 11px;
+
+      &.up:before,
+      &.down:before {
+        content: '';
+        position: absolute;
+        left: 30%;
+        top: 30%;
+
+        width: 0;
+        height: 0;
+
+        border-style: solid;
+        -webkit-transform:rotate(360deg);
+      }
+
+      &.down {
+        @extend .stepper-arrow;
+
+        bottom: 1px!important;
+        background: linear-gradient(0deg, #06ee00 0%, #059b01 100%);
+
+        &:before {
+          border-width: 5px 3px 0 3px;
+          border-color: #fff transparent transparent transparent;
+        }
+      }
+
+      &.up {
+        @extend .stepper-arrow;
+        top: 1px!important;
+        background: linear-gradient(0deg, #059b01 0%, #06ee00 100%);
+
+        &:before {
+          border-width: 0 3px 5px 3px;
+          border-color: transparent transparent #fff transparent;
+        }
+      }
+    }
+  }
+}
