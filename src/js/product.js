@@ -39,6 +39,17 @@ function Products(container, template) {
 		this.quantity = value.quantity;
 		this.gallery_id = value.gallery_id;
 		this.price = value.price;
+		this.inBasket = false;
+
+		this.changeStatus = function () {
+			if (this.inBasket) {
+				return this.inBasket = false;
+			} else {
+				return this.inBasket = true;
+			}
+		};
+
+
 
 		this.GetImages = function () {
 			$.each(Galleries, function (index, value) {

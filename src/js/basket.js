@@ -10,51 +10,42 @@ function Basket(container, template) {
 	this.basketItemContainer = $('#basket_container');
 	this.basketTotalPrice = $('#basket_total_price');
 	this.basketTotalSum = null;
-
-	// Handlebars function to update view on the page
-	this.updatePageView = function (data) {
-		this.basketItemContainer.html('');
-		return this.basketContainer.append(this.templateBasket(data));
-	};
-
+	this.basketTotalItems = null;
 
 	// Adding new product to Basket
 	this.purchase = function (productId, productQuantity) {
-		if (that.basketList[0]) {
-			that.purchaseOldItem(productId, productQuantity); //Добавить возможные проверки
-		} else {
-			that.purchaseNewItem(productId, productQuantity);
-		}
-		// Создавать обьект товара в корзине или же копировать обьект из масива
-		//updateview Basket
-		//update product count 
-	};
 
-	this.purchaseOldItem = function (productId, productQuantity) {
-		$.each(that.basketList, function (index, value) {
-			if (productId == this.id && this.quantity >= productQuantity) {
-				this.productQuantity += +productQuantity;
-				that.updatePageView(Basket); //Вынести 4 в одну функцию
-				that.basketUpdateStepper();
-				that.basketCountQuantity();
-				that.basketCountPrice();
-			}
-		});
-	},
-
-
-	this.purchaseNewItem = function (productId, productQuantity) {
 		$.each(Products.products, function (index, value) {
-			if (productId == value.id) {
+
+			//Checking either product is already in basket
+			if (productId == this.id && this.inBasket === true) {
+				//Find product in basket
+
+				$.each(that.basketList, function (index, value) {
+
+					//If purchasing quantity is lesser than product max quantity, add it
+					if (productId == this.id && this.quantity > productQuantity && this.quantity >= this.productQuantity) {
+						this.productQuantity += +productQuantity;
+						that.updateBasketView(Basket);
+						that.updateStepper();
+
+						//If purchasing quantity is greater than product max quantity, add max product quantity
+					} else {
+						this.productQuantity = this.quantity;
+						that.updateBasketView(Basket);
+						that.updateStepper();
+					}
+				});
+
+				//If purchasing item is new in basket, add it
+			} else if (productId == this.id && this.inBasket === false) {
+				this.changeStatus();
 				that.basketList.push(new that.purchaseItemConstructor(value, productQuantity));
-				that.updatePageView(Basket); //Вынести 4 в одну функцию
-				that.basketUpdateStepper();
-				that.basketCountQuantity();
-				that.basketCountPrice();
+				that.updateBasketView(Basket);
+				that.updateStepper();
 			}
 		});
 	},
-
 
 
 	// Purchase item constructor
@@ -64,36 +55,53 @@ function Basket(container, template) {
 		this.quantity = value.quantity;
 		this.productQuantity = +(productQuantity);
 		this.price = value.price;
-	}
+		this.totalPrice = null;
 
+		this.countTotalPrice = function () {
+			this.totalPrice = null;
+			this.totalPrice = (this.price * this.productQuantity).toFixed(2);
+		};
+	},
+
+
+	// Handlebars function to update view on the page
+	this.updateBasketView = function (data) {
+		this.basketCountQuantity();
+		this.basketCountTotalSum();
+		this.basketCountItemSum();
+
+		this.basketItemContainer.html('');
+		return this.basketContainer.append(this.templateBasket(data));
+	},
+
+	//Counts and places total cart quantity
 	this.basketCountQuantity = function () {
-		this.basketQuantity.text(this.basketList.length);
-	}
-
-	this.basketUpdateStepper = function () {
-		this.basketWrapper.find("input[type='number']").stepper();
-	}
-
-	this.basketUpdateTotalPrice = function () {
-		that.basketTotalPrice.text("$ " + that.basketTotalSum.toFixed(2)); // Вынести в функцию
-	};
-
-	this.basketCountPrice = function () {
-		that.basketTotalSum = null;
-
+		that.basketTotalItems = null;
 		$.each(that.basketList, function (index, value) {
-			that.basketTotalSum += value.price * value.productQuantity;
-			/*			if (productId == value.id) {
-				that.basketList.push(new that.purchaseItemConstructor(value, productQuantity));
-			}*/
-			that.updatePageView(Basket);
-			that.basketUpdateStepper();
+			that.basketTotalItems += +this.productQuantity;
 		});
+		that.basketQuantity.text(that.basketTotalItems);
+	},
+	//Counts and places total cart sum price
+	this.basketCountTotalSum = function () {
+		that.basketTotalSum = null;
+		$.each(that.basketList, function (index, value) {
+			that.basketTotalSum += this.price * this.productQuantity;
+			that.basketTotalPrice.text("$ " + that.basketTotalSum.toFixed(2));
+		});
+	},
 
+	//Initializing stepper input function on all basket items
+	this.basketCountItemSum = function () {
+		$.each(that.basketList, function (index, value) {
+			this.countTotalPrice();
+		});
+	},
+
+	//Initializing stepper function on all basket
+	this.updateStepper = function () {
+		this.basketWrapper.find("input[type='number']").stepper();
 	};
-
-
-
 
 }
 
