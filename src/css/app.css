@@ -1,0 +1,375 @@
+/*== Base ==*/
+/* line 2, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+html {
+  height: auto; }
+
+/* line 6, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+body {
+  position: relative;
+  min-width: 320px;
+  font-size: 0.75rem; }
+  /* line 10, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+  body main {
+    background-color: #fff; }
+
+/* line 15, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+a {
+  color: #05a101;
+  text-decoration: none; }
+  /* line 18, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+  a:hover {
+    color: #048101;
+    text-decoration: underline; }
+
+/* line 26, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  line-height: 1.3; }
+
+/* line 32, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+input[type="text"] {
+  margin: 0; }
+
+/* line 39, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+input[type="text"]:-moz-placeholder, input[type="text"]::-moz-placeholder, input[type="text"]:-ms-input-placeholder, input[type="text"]::-webkit-input-placeholder {
+  color: #bfbfbf;
+  font-style: italic; }
+
+/* line 44, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+[class*="block-grid-"] > li {
+  padding: 0 1.4%; }
+
+/* line 51, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+input:focus, input:hover, input:active, textarea:focus, textarea:hover, textarea:active, button:focus, button:hover, button:active {
+  outline: 0; }
+
+/* line 56, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+ul {
+  margin: 0; }
+
+/*== Layouts ==*/
+/* line 1, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/layout/_index.scss */
+.l-catalog {
+  margin: 55px 0 150px 0; }
+
+/* line 5, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/layout/_index.scss */
+.l-sidebar {
+  margin-top: 20px; }
+
+/*== Modules ==*/
+/* line 3, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+.basket {
+  min-width: 220px;
+  background-color: #feffa7;
+  box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.35); }
+  @media only screen and (min-width:40.023em) and (max-width:54em), only screen and (min-width:54.023em) and (max-width:61em) {
+    .basket {
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      right: 0;
+      visibility: hidden; } }
+  /* line 16, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+  .basket--header {
+    border-bottom: 2px solid #e6d43e;
+    font-size: 14px; }
+    /* line 20, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+    .basket--header--title {
+      display: inline-block;
+      padding: 32px 10px 32px 20px;
+      font-size: 14px;
+      font-weight: 400; }
+    /* line 28, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+    .basket--header--cart {
+      float: right;
+      display: block;
+      height: 65px;
+      width: 60px;
+      margin: 3px 16px 0 0;
+      visibility: visible;
+      background: url("../img/cart.png") no-repeat center bottom; }
+      @media only screen and (min-width:40.023em) and (max-width:54em), only screen and (min-width:54.023em) and (max-width:61em) {
+        .basket--header--cart {
+          cursor: pointer;
+          visibility: visible; } }
+      /* line 44, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+      .basket--header--cart > i {
+        display: block;
+        margin: 0 0 0 14%;
+        padding: 5px 0 0 34%;
+        color: #fff;
+        font-weight: 600;
+        background: url("../img/cart-bg-green.png") no-repeat;
+        background-position: 50% 50%; }
+  /* line 58, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+  .basket--item {
+    clear: both;
+    border-bottom: 2px solid #e6d43e; }
+    /* line 62, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+    .basket--item--name {
+      display: inline-block;
+      width: 50%;
+      padding: 16px 5px 16px 16px; }
+      @media only screen and (max-width: 40em) {
+        .basket--item--name {
+          width: 68%; } }
+    /* line 72, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+    .basket--item--price, .basket--total-price {
+      display: inline-block;
+      padding: 16px 0 16px 10px;
+      text-align: right; }
+    /* line 78, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+    .basket--item .quantity .stepper, .basket--item .quantity {
+      margin: 0;
+      float: none; }
+      @media only screen {
+        .basket--item .quantity .stepper, .basket--item .quantity {
+          float: none;
+          margin-left: 0; } }
+  /* line 88, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+  .basket--total-price {
+    width: 100%;
+    padding-right: 19px;
+    font-weight: 700; }
+
+/* line 2, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_categories.scss */
+.categories .inline-list {
+  margin-left: 0; }
+  /* line 4, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_categories.scss */
+  .categories .inline-list > li {
+    float: none; }
+
+/* line 2, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_filters.scss */
+.filters--select {
+  height: 20px;
+  width: 110px;
+  font-size: 11px; }
+
+/* line 2, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+.centered-img, .gallery-cell--main > img, .gallery-cell--list--item > a > img {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto; }
+
+/* line 13, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+.gallery-arrow, .gallery-cell--left, .gallery-cell--right {
+  display: inline-block;
+  height: 50px;
+  width: 20px;
+  opacity: 0.8;
+  background-color: #fff; }
+  /* line 20, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+  .gallery-arrow:hover, .gallery-cell--left:hover, .gallery-cell--right:hover {
+    opacity: 1; }
+
+/* line 25, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+.gallery-cell {
+  height: 265px; }
+  /* line 28, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+  .gallery-cell--main {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 210px; }
+    /* line 34, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+    .gallery-cell--main > img {
+      max-height: 210px; }
+  /* line 40, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+  .gallery-cell--list {
+    display: inline-block;
+    margin: 2px auto;
+    padding: 0;
+    font-size: 0; }
+    /* line 46, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+    .gallery-cell--list--item {
+      position: relative;
+      display: inline-block;
+      height: 50px;
+      width: 50px;
+      margin: 0 2px;
+      border: 1px solid rgba(51, 51, 51, 0.5); }
+  /* line 60, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+  .gallery-cell--left {
+    background: url("../img/prod-gal-al.png") no-repeat center; }
+  /* line 65, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+  .gallery-cell--right {
+    background: url("../img/prod-gal-ar.png") no-repeat center; }
+
+/* line 1, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+.quantity.stepper, .quantity {
+  display: inline-block;
+  width: 45px;
+  height: 24px;
+  border-radius: 0;
+  vertical-align: middle; }
+  @media only screen {
+    .quantity.stepper, .quantity {
+      float: left;
+      margin-left: 10px; } }
+  @media only screen and (min-width:61.023em) {
+    .quantity.stepper, .quantity {
+      float: none;
+      margin-left: 0; } }
+  /* line 18, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+  .quantity.stepper input.stepper-input, .quantity input.stepper-input {
+    width: 45px;
+    height: 24px;
+    padding: 4px;
+    background-color: #fff;
+    border-radius: 0; }
+  /* line 27, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+  .quantity.stepper .stepper, .quantity .stepper {
+    display: inline-block;
+    height: 24px;
+    width: 45px;
+    margin: 11px 0;
+    border-radius: 0; }
+    /* line 34, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+    .quantity.stepper .stepper-arrow, .quantity .stepper-arrow, .quantity.stepper .stepper-arrow.down, .quantity .stepper-arrow.down, .quantity.stepper .stepper-arrow.up, .quantity .stepper-arrow.up {
+      border: 0;
+      width: 16px;
+      height: 11px; }
+      /* line 40, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+      .quantity.stepper .stepper-arrow.up:before, .quantity.stepper .up.stepper-arrow:before, .quantity.stepper .stepper-arrow.down:before, .quantity.stepper .down.stepper-arrow:before, .quantity .stepper-arrow.up:before, .quantity.stepper .up.stepper-arrow:before, .quantity .up.stepper-arrow:before, .quantity .stepper-arrow.down:before, .quantity.stepper .down.stepper-arrow:before, .quantity .down.stepper-arrow:before {
+        content: '';
+        position: absolute;
+        left: 30%;
+        top: 30%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        -webkit-transform: rotate(360deg); }
+      /* line 53, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+      .quantity.stepper .stepper-arrow.down, .quantity.stepper .down.stepper-arrow, .quantity .stepper-arrow.down, .quantity.stepper .down.stepper-arrow, .quantity .down.stepper-arrow {
+        bottom: 1px !important;
+        background: linear-gradient(0deg, #06ee00 0%, #059b01 100%); }
+        /* line 59, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+        .quantity.stepper .stepper-arrow.down:before, .quantity.stepper .down.stepper-arrow:before, .quantity .stepper-arrow.down:before, .quantity.stepper .down.stepper-arrow:before, .quantity .down.stepper-arrow:before {
+          border-width: 5px 3px 0 3px;
+          border-color: #fff transparent transparent transparent; }
+      /* line 65, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+      .quantity.stepper .stepper-arrow.up, .quantity.stepper .up.stepper-arrow, .quantity .stepper-arrow.up, .quantity.stepper .up.stepper-arrow, .quantity .up.stepper-arrow {
+        top: 1px !important;
+        background: linear-gradient(0deg, #059b01 0%, #06ee00 100%); }
+        /* line 70, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+        .quantity.stepper .stepper-arrow.up:before, .quantity.stepper .up.stepper-arrow:before, .quantity .stepper-arrow.up:before, .quantity.stepper .up.stepper-arrow:before, .quantity .up.stepper-arrow:before {
+          border-width: 0 3px 5px 3px;
+          border-color: transparent transparent #fff transparent; }
+
+/* line 1, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+.product-cell {
+  max-height: 455px;
+  min-height: 455px;
+  margin-top: 32px;
+  text-align: center;
+  transition: all 300ms ease-out; }
+  @media only screen {
+    .product-cell {
+      max-height: 415px; } }
+  @media only screen and (min-width:61.023em) {
+    .product-cell {
+      max-height: 455px; } }
+  /* line 16, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+  .product-cell--wrapper {
+    position: relative;
+    display: inline-block;
+    max-height: 455px;
+    min-height: 455px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    transition: all 500ms ease-out;
+    /* This code for unfolding cell at hover */ }
+    /* line 29, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+    .product-cell--wrapper:hover {
+      max-height: none;
+      min-height: none; }
+      /* line 33, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+      .product-cell--wrapper:hover .product-cell--footer {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        padding: 0;
+        box-shadow: none; }
+      /* line 41, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+      .product-cell--wrapper:hover .product-cell--wrapper--info {
+        position: relative; }
+    /* line 46, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+    .product-cell--wrapper--info {
+      z-index: 2;
+      padding: 0 15px 20px 15px;
+      background-color: #fff; }
+  /* line 54, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+  .product-cell--title {
+    padding: 14px 0 9px 0;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-align: left;
+    line-height: 1.2; }
+  /* line 64, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+  .product-cell--desc {
+    clear: both;
+    display: block;
+    min-height: 95px;
+    padding-bottom: 5px;
+    overflow: hidden;
+    font-size: 12px;
+    text-align: justify; }
+  /* line 76, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+  .product-cell--btn {
+    float: right;
+    display: block;
+    width: 108px;
+    height: 32px;
+    margin: 4px 0 0 0;
+    border-radius: 5px;
+    background: linear-gradient(0deg, #059b01 0%, #06ee00 100%);
+    box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.35);
+    transition: all 300ms ease-out; }
+    /* line 89, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+    .product-cell--btn:hover {
+      background: linear-gradient(50deg, #059b01 0%, #06ee00 85%);
+      opacity: 0.8; }
+    /* line 94, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+    .product-cell--btn--price {
+      position: absolute;
+      top: 20%;
+      right: 38%;
+      display: block;
+      color: #fff;
+      font-size: 15px;
+      font-style: normal; }
+    /* line 105, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+    .product-cell--btn--cart {
+      position: absolute;
+      top: 2px;
+      right: 3px;
+      display: block;
+      width: 30px;
+      height: 30px;
+      background: url('../img/buy-btn.png') no-repeat center;
+      border-left: 1px solid #fff; }
+
+/* line 120, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+.product-cell--footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  padding: 0 15px 20px 15px;
+  background: #fff;
+  box-shadow: 0px -12px 36px 11px white;
+  /*   @media only screen and (min-width:54.023em) {
+  top: 133px;
+  bottom: none;
+}*/ }
+
+/*== States ==*/
+/*# sourceMappingURL=app.css.map */
