@@ -9,8 +9,31 @@ function Basket(container, template) {
 	this.basketWrapper = $('#basket_wrapper');
 	this.basketItemContainer = $('#basket_container');
 	this.basketTotalPrice = $('#basket_total_price');
-	this.basketTotalSum = null;
-	this.basketTotalItems = null;
+	this.basketTotalSum = 0;
+	this.basketTotalItems = 0;
+
+
+	// Changes product quantity in Basket
+	this.changePurchaseItemsCount = function (productId, inputValue) {
+		$.each(that.basketList, function (index, value) {
+			if (productId == this.id) {
+				this.productQuantity = inputValue;
+				that.updateBasketView(Basket);
+				that.updateStepper();
+			}
+		});
+	};
+
+	// Delate item from Basket
+	this.delatePurchaseItems = function (productId) {
+		$.each(that.basketList, function (index, value) {
+			if (productId == this.id) {
+				that.basketList.splice(that.basketList.indexOf(this));
+				that.updateBasketView(Basket);
+				that.updateStepper();
+			}
+		});
+	};
 
 	// Adding new product to Basket
 	this.purchase = function (productId, productQuantity) {
@@ -19,21 +42,16 @@ function Basket(container, template) {
 
 			//Checking either product is already in basket
 			if (productId == this.id && this.inBasket === true) {
-				//Find product in basket
 
+				//Find product in basket
 				$.each(that.basketList, function (index, value) {
 
 					//If purchasing quantity is lesser than product max quantity, add it
-					if (productId == this.id && this.quantity > productQuantity && this.quantity >= this.productQuantity) {
-						this.productQuantity += +productQuantity;
+					if (productId == this.id && this.quantity > productQuantity && this.productQuantity < this.quantity) {
+						this.productQuantity += productQuantity;
 						that.updateBasketView(Basket);
 						that.updateStepper();
-
 						//If purchasing quantity is greater than product max quantity, add max product quantity
-					} else {
-						this.productQuantity = this.quantity;
-						that.updateBasketView(Basket);
-						that.updateStepper();
 					}
 				});
 
@@ -59,7 +77,7 @@ function Basket(container, template) {
 
 		this.countTotalPrice = function () {
 			this.totalPrice = null;
-			this.totalPrice = (this.price * this.productQuantity).toFixed(2);
+			this.totalPrice = +(this.price * this.productQuantity).toFixed(2);
 		};
 	},
 
@@ -76,7 +94,7 @@ function Basket(container, template) {
 
 	//Counts and places total cart quantity
 	this.basketCountQuantity = function () {
-		that.basketTotalItems = null;
+		that.basketTotalItems = 0;
 		$.each(that.basketList, function (index, value) {
 			that.basketTotalItems += +this.productQuantity;
 		});
@@ -84,11 +102,15 @@ function Basket(container, template) {
 	},
 	//Counts and places total cart sum price
 	this.basketCountTotalSum = function () {
-		that.basketTotalSum = null;
-		$.each(that.basketList, function (index, value) {
-			that.basketTotalSum += this.price * this.productQuantity;
-			that.basketTotalPrice.text("$ " + that.basketTotalSum.toFixed(2));
-		});
+		that.basketTotalSum = 0;
+		if (that.basketList[0]) {
+			$.each(that.basketList, function (index, value) {
+				that.basketTotalSum += this.price * this.productQuantity;
+				that.basketTotalPrice.text("$ " + that.basketTotalSum.toFixed(2));
+			});
+		} else {
+			that.basketTotalPrice.text("$ " + 0);
+		}
 	},
 
 	//Initializing stepper input function on all basket items
