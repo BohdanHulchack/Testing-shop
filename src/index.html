@@ -60,13 +60,15 @@
                  <a href="" data-gallery-main="" class="gallery-cell--main">
                  <img src="{{images.[0]}}" alt=""> </a>
                  <a href="" data-gallery-left="" class="gallery-cell--left"></a>
-                   <ul data-gallery-list="" class="gallery-cell--list">
-                    {{#each images}}
-                    <li class="gallery-cell--list--item">
-                      <a href="#"><img src="{{this}}" alt=""></a>
-                    </li>
-                  {{/each}}
-                   </ul>
+                  <div class="gallery-cell--list--wrapper">
+                     <ul data-gallery-list="" class="gallery-cell--list">
+                       {{#each images}}
+                         <li class="gallery-cell--list--item">
+                          <img src="{{this}}" alt="">
+                         </li>
+                       {{/each}}
+                     </ul>
+                  </div>
                 <a href="" data-gallery-right="" class="gallery-cell--right"></a>
                  </div>
                  <div class="product-cell--wrapper--info"><a href="{{id}}" class="product-cell--title">{{title}}</a>
@@ -96,6 +98,7 @@
     <script src="js/vendor/jquery.fs.stepper.min.js"></script>
     <script src="js/vendor/handlebars.min.js"></script>
     <script src="js/basketAdoptive.js"></script>
+    <script src="js/slider.js"></script>
     <script src="js/categories.js"></script>
     <script src="js/galleries.js"></script>
     <script src="js/product.js"></script>

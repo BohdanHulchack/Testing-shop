@@ -8,7 +8,8 @@ function Products(container, template) {
 
 	// Handlebarsjs function to write
 	this.updatePageView = function (data) {
-		return this.productsContainer.append(this.templateProducts(data));
+		this.productsContainer.append(this.templateProducts(data));
+		Slider($("[data-gallery]"));
 	};
 
 	// Creating new Category object from json data
