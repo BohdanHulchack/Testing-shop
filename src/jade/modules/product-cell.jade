@@ -4,19 +4,14 @@
 |      <div class="product-cell--wrapper">
 |        <div data-gallery="" class="gallery-cell">
 |        <a href="" data-gallery-main="" class="gallery-cell--main">
-|        <img src="img/3.jpg" alt=""></a>
+|        <img src="{{images.[0]}}" alt=""> </a>
 |        <a href="" data-gallery-left="" class="gallery-cell--left"></a>
 |          <ul data-gallery-list="" class="gallery-cell--list">
-|            <li class="gallery-cell--list--item">
-|             <a href=""><img src="img/1.jpg" alt=""></a>
-|           </li>
+|           {{#each images}}
 |           <li class="gallery-cell--list--item">
-|             <a href="">
-|             <img src="img/2.jpg" alt=""></a>
+|             <a href="#"><img src="{{this}}" alt=""></a>
 |           </li>
-|           <li class="gallery-cell--list--item">
-|             <a href=""><img src="img/3.jpg" alt=""></a>
-|           </li>
+|         {{/each}}
 |          </ul>
 |       <a href="" data-gallery-right="" class="gallery-cell--right"></a>
 |        </div>

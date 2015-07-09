@@ -17,7 +17,7 @@ function Basket(container, template) {
 	this.changePurchaseItemsCount = function (productId, inputValue) {
 		$.each(that.basketList, function (index, value) {
 			if (productId == this.id) {
-				this.productQuantity = inputValue;
+				this.productQuantity = +inputValue;
 				that.updateBasketView(Basket);
 				that.updateStepper();
 			}
@@ -33,7 +33,6 @@ function Basket(container, template) {
 						this.changeStatus();
 					}
 				});
-				delete this;
 				that.basketList.splice(that.basketList.indexOf(this), 1);
 				that.updateBasketView(Basket);
 				that.updateStepper();

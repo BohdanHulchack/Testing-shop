@@ -1,8 +1,5 @@
 $(document).ready(function () {
 
-	//Initializing objects
-	//Initializing backend paths
-
 	//Initializing stepper inputs
 	$("input[type='number']").stepper();
 
@@ -47,8 +44,5 @@ $(document).ready(function () {
 		}
 
 	});
-
-
-
 
 });

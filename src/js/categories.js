@@ -27,7 +27,6 @@ function Categories(container, template) {
 	this.getCategories = function (link) {
 		$.get(link, function (data) {
 			var cat = JSON.parse(data);
-			console.log(cat);
 			$.each(cat.categories, function (index, value) {
 				that.addNewCategory(value);
 			});

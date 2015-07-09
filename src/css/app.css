@@ -181,10 +181,13 @@ ul {
   /* line 40, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
   .gallery-cell--list {
     display: inline-block;
+    height: 50px;
+    width: 77%;
     margin: 2px auto;
+    overflow: hidden;
     padding: 0;
     font-size: 0; }
-    /* line 46, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+    /* line 49, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
     .gallery-cell--list--item {
       position: relative;
       display: inline-block;
@@ -192,10 +195,13 @@ ul {
       width: 50px;
       margin: 0 2px;
       border: 1px solid rgba(51, 51, 51, 0.5); }
-  /* line 60, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+      /* line 56, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+      .gallery-cell--list--item:hover {
+        border: 1px solid #333333; }
+  /* line 65, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
   .gallery-cell--left {
     background: url("../img/prod-gal-al.png") no-repeat center; }
-  /* line 65, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+  /* line 70, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
   .gallery-cell--right {
     background: url("../img/prod-gal-ar.png") no-repeat center; }
 

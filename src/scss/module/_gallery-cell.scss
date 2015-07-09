@@ -39,7 +39,10 @@
 
   &--list {
     display: inline-block;
+    height: 50px;
+    width: 77%;
     margin: 2px auto;
+    overflow: hidden;
     padding: 0;
     font-size: 0;
 
@@ -50,7 +53,9 @@
       width: 50px;
       margin: 0 2px;
       border: 1px solid rgba(#333, 0.5);
-
+      &:hover {
+        border: 1px solid rgba(#333, 1);
+      }
       & > a > img {
         @extend .centered-img;
       }

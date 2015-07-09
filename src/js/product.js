@@ -4,8 +4,7 @@ function Products(container, template) {
 	this.products = [];
 	this.productsContainer = container;
 	this.productsTemplate = template;
-
-	this.templateProducts = Handlebars.compile(this.productsTemplate.html())
+	this.templateProducts = Handlebars.compile(this.productsTemplate.html());
 
 	// Handlebarsjs function to write
 	this.updatePageView = function (data) {
@@ -24,10 +23,24 @@ function Products(container, template) {
 			$.each(prod.products, function (index, value) {
 				that.addNewProduct(value);
 			});
+			that.findGalleries();
 			that.updatePageView(Products);
-			$("input[type='number']").stepper(); // Вынести в функцию
+			$("input[type='number']").stepper();
 		});
-	}
+	};
+
+	//  Searching for product that matches current gallery and binds them
+	this.findGalleries = function () {
+		$.each(Galleries.galleriesList, function (index, value) {
+			var currentGallery = this;
+
+			$.each(Products.products, function (index, value) {
+				if (this.gallery_id === currentGallery.id) {
+					this.images = currentGallery.images;
+				}
+			});
+		});
+	};
 
 	// Product item constructor
 	this.productConstructor = function Product(value) {
@@ -40,25 +53,15 @@ function Products(container, template) {
 		this.gallery_id = value.gallery_id;
 		this.price = value.price;
 		this.inBasket = false;
+		this.images = [];
 
 		this.changeStatus = function () {
 			if (this.inBasket) {
-				return this.inBasket = false;
+				this.inBasket = false;
 			} else {
-				return this.inBasket = true;
+				this.inBasket = true;
 			}
 		};
-
-
-
-		this.GetImages = function () {
-			$.each(Galleries, function (index, value) {
-				if (that.gallery_id == value.id && that.images != value.images) {
-					that.images = value.images;
-				}
-			});
-		}
-
 	};
 }
 
