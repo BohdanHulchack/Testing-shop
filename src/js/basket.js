@@ -28,7 +28,13 @@ function Basket(container, template) {
 	this.delatePurchaseItems = function (productId) {
 		$.each(that.basketList, function (index, value) {
 			if (productId == this.id) {
-				that.basketList.splice(that.basketList.indexOf(this));
+				$.each(Products.products, function (index, value) {
+					if (productId == this.id && this.inBasket === true) {
+						this.changeStatus();
+					}
+				});
+				delete this;
+				that.basketList.splice(that.basketList.indexOf(this), 1);
 				that.updateBasketView(Basket);
 				that.updateStepper();
 			}
