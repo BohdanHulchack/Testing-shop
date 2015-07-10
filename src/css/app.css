@@ -1,63 +1,63 @@
 /*== Base ==*/
-/* line 2, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+/* line 2, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/base/_base.scss */
 html {
   height: auto; }
 
-/* line 6, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+/* line 6, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/base/_base.scss */
 body {
   position: relative;
   min-width: 320px;
   font-size: 0.75rem; }
-  /* line 10, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+  /* line 10, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/base/_base.scss */
   body main {
     background-color: #fff; }
 
-/* line 15, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+/* line 15, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/base/_base.scss */
 a {
   color: #05a101;
   text-decoration: none; }
-  /* line 18, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+  /* line 18, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/base/_base.scss */
   a:hover {
     color: #048101;
     text-decoration: underline; }
 
-/* line 26, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+/* line 26, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/base/_base.scss */
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   line-height: 1.3; }
 
-/* line 32, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+/* line 32, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/base/_base.scss */
 input[type="text"] {
   margin: 0; }
 
-/* line 39, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+/* line 39, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/base/_base.scss */
 input[type="text"]:-moz-placeholder, input[type="text"]::-moz-placeholder, input[type="text"]:-ms-input-placeholder, input[type="text"]::-webkit-input-placeholder {
   color: #bfbfbf;
   font-style: italic; }
 
-/* line 44, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+/* line 44, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/base/_base.scss */
 [class*="block-grid-"] > li {
   padding: 0 1.4%; }
 
-/* line 51, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+/* line 51, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/base/_base.scss */
 input:focus, input:hover, input:active, textarea:focus, textarea:hover, textarea:active, button:focus, button:hover, button:active {
   outline: 0; }
 
-/* line 56, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/base/_base.scss */
+/* line 56, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/base/_base.scss */
 ul {
   margin: 0; }
 
 /*== Layouts ==*/
-/* line 1, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/layout/_index.scss */
+/* line 1, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/layout/_index.scss */
 .l-catalog {
   margin: 55px 0 150px 0; }
 
-/* line 5, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/layout/_index.scss */
+/* line 5, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/layout/_index.scss */
 .l-sidebar {
   margin-top: 20px; }
 
 /*== Modules ==*/
-/* line 3, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+/* line 3, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_basket.scss */
 .basket {
   min-width: 220px;
   background-color: #feffa7;
@@ -69,17 +69,17 @@ ul {
       top: 0;
       right: 0;
       visibility: hidden; } }
-  /* line 16, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+  /* line 16, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_basket.scss */
   .basket--header {
     border-bottom: 2px solid #e6d43e;
     font-size: 14px; }
-    /* line 20, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+    /* line 20, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_basket.scss */
     .basket--header--title {
       display: inline-block;
       padding: 32px 10px 32px 20px;
       font-size: 14px;
       font-weight: 400; }
-    /* line 28, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+    /* line 28, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_basket.scss */
     .basket--header--cart {
       float: right;
       display: block;
@@ -92,7 +92,7 @@ ul {
         .basket--header--cart {
           cursor: pointer;
           visibility: visible; } }
-      /* line 44, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+      /* line 44, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_basket.scss */
       .basket--header--cart > i {
         display: block;
         margin: 0 0 0 14%;
@@ -101,11 +101,11 @@ ul {
         font-weight: 600;
         background: url("../img/cart-bg-green.png") no-repeat;
         background-position: 50% 50%; }
-  /* line 58, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+  /* line 58, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_basket.scss */
   .basket--item {
     clear: both;
     border-bottom: 2px solid #e6d43e; }
-    /* line 62, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+    /* line 62, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_basket.scss */
     .basket--item--name {
       display: inline-block;
       width: 50%;
@@ -113,12 +113,12 @@ ul {
       @media only screen and (max-width: 40em) {
         .basket--item--name {
           width: 68%; } }
-    /* line 72, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+    /* line 72, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_basket.scss */
     .basket--item--price, .basket--total-price {
       display: inline-block;
       padding: 16px 0 16px 10px;
       text-align: right; }
-    /* line 78, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+    /* line 78, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_basket.scss */
     .basket--item .quantity .stepper, .basket--item .quantity {
       margin: 0;
       float: none; }
@@ -126,26 +126,26 @@ ul {
         .basket--item .quantity .stepper, .basket--item .quantity {
           float: none;
           margin-left: 0; } }
-  /* line 88, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_basket.scss */
+  /* line 88, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_basket.scss */
   .basket--total-price {
     width: 100%;
     padding-right: 19px;
     font-weight: 700; }
 
-/* line 2, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_categories.scss */
+/* line 2, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_categories.scss */
 .categories .inline-list {
   margin-left: 0; }
-  /* line 4, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_categories.scss */
+  /* line 4, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_categories.scss */
   .categories .inline-list > li {
     float: none; }
 
-/* line 2, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_filters.scss */
+/* line 2, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_filters.scss */
 .filters--select {
   height: 20px;
   width: 110px;
   font-size: 11px; }
 
-/* line 2, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+/* line 2, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_gallery-cell.scss */
 .centered-img, .gallery-cell--main > img, .gallery-cell--list--item > img {
   z-index: 1;
   position: absolute;
@@ -155,30 +155,30 @@ ul {
   bottom: 0;
   margin: auto; }
 
-/* line 13, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+/* line 13, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_gallery-cell.scss */
 .gallery-arrow, .gallery-cell--left, .gallery-cell--right {
   display: inline-block;
   height: 50px;
   width: 20px;
   opacity: 0.8;
   background-color: #fff; }
-  /* line 20, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+  /* line 20, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_gallery-cell.scss */
   .gallery-arrow:hover, .gallery-cell--left:hover, .gallery-cell--right:hover {
     opacity: 1; }
 
-/* line 25, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+/* line 25, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_gallery-cell.scss */
 .gallery-cell {
   height: 265px; }
-  /* line 28, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+  /* line 28, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_gallery-cell.scss */
   .gallery-cell--main {
     position: relative;
     display: block;
     width: 100%;
     height: 210px; }
-    /* line 34, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+    /* line 34, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_gallery-cell.scss */
     .gallery-cell--main > img {
       max-height: 210px; }
-  /* line 40, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+  /* line 40, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_gallery-cell.scss */
   .gallery-cell--list {
     cursor: pointer;
     display: inline-block;
@@ -187,13 +187,13 @@ ul {
     overflow: hidden;
     padding: 0;
     font-size: 0; }
-    /* line 49, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+    /* line 49, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_gallery-cell.scss */
     .gallery-cell--list--wrapper {
       display: inline-block;
       width: 162px;
       overflow: hidden;
       vertical-align: top; }
-    /* line 56, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+    /* line 56, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_gallery-cell.scss */
     .gallery-cell--list--item {
       position: relative;
       display: inline-block;
@@ -202,17 +202,17 @@ ul {
       margin: 0 2px;
       border: 1px solid rgba(51, 51, 51, 0.5);
       vertical-align: top; }
-      /* line 66, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+      /* line 66, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_gallery-cell.scss */
       .gallery-cell--list--item:hover {
         border: 1px solid #333333; }
-  /* line 75, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+  /* line 75, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_gallery-cell.scss */
   .gallery-cell--left {
     background: url("../img/prod-gal-al.png") no-repeat center; }
-  /* line 80, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_gallery-cell.scss */
+  /* line 80, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_gallery-cell.scss */
   .gallery-cell--right {
     background: url("../img/prod-gal-ar.png") no-repeat center; }
 
-/* line 1, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+/* line 1, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_stepper.scss */
 .quantity.stepper, .quantity {
   display: inline-block;
   width: 45px;
@@ -227,26 +227,26 @@ ul {
     .quantity.stepper, .quantity {
       float: none;
       margin-left: 0; } }
-  /* line 18, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+  /* line 18, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_stepper.scss */
   .quantity.stepper input.stepper-input, .quantity input.stepper-input {
     width: 45px;
     height: 24px;
     padding: 4px;
     background-color: #fff;
     border-radius: 0; }
-  /* line 27, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+  /* line 27, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_stepper.scss */
   .quantity.stepper .stepper, .quantity .stepper {
     display: inline-block;
     height: 24px;
     width: 45px;
     margin: 11px 0;
     border-radius: 0; }
-    /* line 34, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+    /* line 34, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_stepper.scss */
     .quantity.stepper .stepper-arrow, .quantity .stepper-arrow, .quantity.stepper .stepper-arrow.down, .quantity .stepper-arrow.down, .quantity.stepper .stepper-arrow.up, .quantity .stepper-arrow.up {
       border: 0;
       width: 16px;
       height: 11px; }
-      /* line 40, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+      /* line 40, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_stepper.scss */
       .quantity.stepper .stepper-arrow.up:before, .quantity.stepper .up.stepper-arrow:before, .quantity.stepper .stepper-arrow.down:before, .quantity.stepper .down.stepper-arrow:before, .quantity .stepper-arrow.up:before, .quantity.stepper .up.stepper-arrow:before, .quantity .up.stepper-arrow:before, .quantity .stepper-arrow.down:before, .quantity.stepper .down.stepper-arrow:before, .quantity .down.stepper-arrow:before {
         content: '';
         position: absolute;
@@ -256,24 +256,24 @@ ul {
         height: 0;
         border-style: solid;
         -webkit-transform: rotate(360deg); }
-      /* line 53, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+      /* line 53, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_stepper.scss */
       .quantity.stepper .stepper-arrow.down, .quantity.stepper .down.stepper-arrow, .quantity .stepper-arrow.down, .quantity.stepper .down.stepper-arrow, .quantity .down.stepper-arrow {
         bottom: 1px !important;
         background: linear-gradient(0deg, #06ee00 0%, #059b01 100%); }
-        /* line 59, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+        /* line 59, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_stepper.scss */
         .quantity.stepper .stepper-arrow.down:before, .quantity.stepper .down.stepper-arrow:before, .quantity .stepper-arrow.down:before, .quantity.stepper .down.stepper-arrow:before, .quantity .down.stepper-arrow:before {
           border-width: 5px 3px 0 3px;
           border-color: #fff transparent transparent transparent; }
-      /* line 65, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+      /* line 65, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_stepper.scss */
       .quantity.stepper .stepper-arrow.up, .quantity.stepper .up.stepper-arrow, .quantity .stepper-arrow.up, .quantity.stepper .up.stepper-arrow, .quantity .up.stepper-arrow {
         top: 1px !important;
         background: linear-gradient(0deg, #059b01 0%, #06ee00 100%); }
-        /* line 70, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_stepper.scss */
+        /* line 70, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_stepper.scss */
         .quantity.stepper .stepper-arrow.up:before, .quantity.stepper .up.stepper-arrow:before, .quantity .stepper-arrow.up:before, .quantity.stepper .up.stepper-arrow:before, .quantity .up.stepper-arrow:before {
           border-width: 0 3px 5px 3px;
           border-color: transparent transparent #fff transparent; }
 
-/* line 1, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+/* line 1, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
 .product-cell {
   max-height: 455px;
   min-height: 455px;
@@ -286,7 +286,7 @@ ul {
   @media only screen and (min-width:61.023em) {
     .product-cell {
       max-height: 455px; } }
-  /* line 16, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+  /* line 16, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
   .product-cell--wrapper {
     position: relative;
     display: inline-block;
@@ -298,33 +298,33 @@ ul {
     background-color: #fff;
     transition: all 500ms ease-out;
     /* This code for unfolding cell at hover */ }
-    /* line 29, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+    /* line 29, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
     .product-cell--wrapper:hover {
       max-height: none;
       min-height: none; }
-      /* line 33, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+      /* line 33, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
       .product-cell--wrapper:hover .product-cell--footer {
         position: relative;
         top: 0;
         bottom: 0;
         padding: 0;
         box-shadow: none; }
-      /* line 41, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+      /* line 41, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
       .product-cell--wrapper:hover .product-cell--wrapper--info {
         position: relative; }
-    /* line 46, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+    /* line 46, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
     .product-cell--wrapper--info {
       z-index: 2;
       padding: 0 15px 20px 15px;
       background-color: #fff; }
-  /* line 54, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+  /* line 54, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
   .product-cell--title {
     font-size: 15px;
     font-weight: 700;
     text-decoration: underline;
     text-align: left;
     line-height: 1.2; }
-  /* line 62, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+  /* line 62, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
   .product-cell--desc {
     clear: both;
     display: block;
@@ -333,7 +333,7 @@ ul {
     overflow: hidden;
     font-size: 12px;
     text-align: justify; }
-  /* line 74, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+  /* line 74, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
   .product-cell--footer {
     position: absolute;
     bottom: 0;
@@ -343,7 +343,7 @@ ul {
     padding: 0 15px 20px 15px;
     background: #fff;
     box-shadow: 0px -12px 36px 11px white; }
-  /* line 87, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+  /* line 87, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
   .product-cell--btn {
     float: right;
     display: block;
@@ -354,11 +354,11 @@ ul {
     background: linear-gradient(0deg, #059b01 0%, #06ee00 100%);
     box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.35);
     transition: all 300ms ease-out; }
-    /* line 100, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+    /* line 100, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
     .product-cell--btn:hover {
       background: linear-gradient(50deg, #059b01 0%, #06ee00 85%);
       opacity: 0.8; }
-    /* line 105, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+    /* line 105, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
     .product-cell--btn--price {
       position: absolute;
       top: 20%;
@@ -367,7 +367,7 @@ ul {
       color: #fff;
       font-size: 15px;
       font-style: normal; }
-    /* line 116, /home/bohdan/Documents/Ciklum/frontend-test-data/src/scss/module/_product-cell.scss */
+    /* line 116, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
     .product-cell--btn--cart {
       position: absolute;
       top: 2px;
