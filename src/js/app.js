@@ -44,4 +44,37 @@ $(document).ready(function () {
 		}
 
 	});
+
+
+
+
+	$('#categories_container').on('click', 'a', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		var catId = $(this).attr('href');
+		if (catId == "showAll") {
+			Products.updatePageView(Products);
+		} else {
+			Categories.showCategory(catId);
+		}
+		return false;
+	});
+
+
+
+	$('#price_select').on('change', function (e) {
+		var value = $(this).val();
+		if (value == 'high') {
+			Products.sortToHigh();
+		} else if (value == 'low') {
+			Products.sortToLow();
+		}
+	});
+
+
+
+
+	/*	var sortByHighest = sortByLowest.reverse();*/
+
+
 });

@@ -2,9 +2,9 @@
 function Categories(container, template) {
 	var that = this;
 	this.categories = [];
+	this.products = [];
 	this.categoriesContainer = container;
 	this.categoriesTemplate = template;
-
 	this.templateCategories = Handlebars.compile(this.categoriesTemplate.html());
 
 	// Handlebarsjs function to write
@@ -33,6 +33,26 @@ function Categories(container, template) {
 			that.updatePageView(Categories);
 		});
 	};
+
+	this.showCategory = function (catId) {
+		that.products = [];
+		$.each(Categories.categories, function (index, value) {
+			if (this.id == catId) {
+				$.each(Products.products, function (index, value) {
+					if (this.category == catId) {
+						that.products.push(this);
+					}
+				});
+			};
+		});
+		Products.updatePageView(Categories);
+	};
+
+
+
+
+
+
 }
 
 var Categories = new Categories($('#categories_container'), $('#templateCategories'));

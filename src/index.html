@@ -34,7 +34,8 @@
       </div>
       <div class="l-catalog small-8 medium-8 large-8 xlarge-6 columns left">
         <ul id="categories_container" class="inline-list categories">
-          <li class="categories--title">Please choose category:</li><script id="templateCategories" type="text/x-handlebars-template">
+          <li class="categories--title">Please choose category:</li>
+          <li class="categories--option"> <a href="showAll">All</a></li><script id="templateCategories" type="text/x-handlebars-template">
           {{#each categories}}
           <li class ="categories--option">
            <a href="{{id}}" alt="{{title}}" >
@@ -45,10 +46,10 @@
           </script>
         </ul>
         <div class="filters">Sort by
-          <select class="filters--select">
+          <select id="price_select" class="filters--select">
             <option value="none">None</option>
-            <option value="t1">Sorting by price &#8593;</option>
-            <option value="t1">Sorting by price &#8595;</option>
+            <option value="high">Sorting by price &#8593;</option>
+            <option value="low">Sorting by price &#8595;</option>
           </select>
         </div>
         <ul id="products_container" class="large-block-grid-3 medium-block-grid-2 small-block-grid-1 text-center">

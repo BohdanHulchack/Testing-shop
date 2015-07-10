@@ -5,11 +5,17 @@ function Products(container, template) {
 	this.productsContainer = container;
 	this.productsTemplate = template;
 	this.templateProducts = Handlebars.compile(this.productsTemplate.html());
+	this.currentView = {
+		products: []
+	};
 
 	// Handlebarsjs function to write
 	this.updatePageView = function (data) {
-		this.productsContainer.append(this.templateProducts(data));
+		that.currentView.products = data.products;
+		that.productsContainer.html('');
+		that.productsContainer.append(this.templateProducts(data));
 		Slider($("[data-gallery]"));
+		that.updateStepper();
 	};
 
 	// Creating new Category object from json data
@@ -26,7 +32,7 @@ function Products(container, template) {
 			});
 			that.findGalleries();
 			that.updatePageView(Products);
-			$("input[type='number']").stepper();
+			that.currentView.products = Products.products;
 		});
 	};
 
@@ -42,6 +48,32 @@ function Products(container, template) {
 			});
 		});
 	};
+
+	this.updateStepper = function () {
+		this.productsContainer.find("input[type='number']").stepper();
+	};
+
+
+	this.sortToLow = function () {
+		Products.currentView.products = Products.currentView.products.sort(function (a, b) {
+			var keyA = a.price,
+				keyB = b.price;
+			// Compare the 2 dates
+			if (keyA < keyB) return -1;
+			if (keyA > keyB) return 1;
+			return 0;
+		});
+
+		Products.updatePageView(Products.currentView);
+	};
+
+	this.sortToHigh = function () {
+		that.sortToLow();
+		Products.currentView.products = Products.currentView.products.reverse();
+		Products.updatePageView(Products.currentView);
+	};
+
+
 
 	// Product item constructor
 	this.productConstructor = function Product(value) {
