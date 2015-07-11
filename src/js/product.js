@@ -9,6 +9,30 @@ function Products(container, template) {
 		products: []
 	};
 
+	Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
+
+		switch (operator) {
+			case '==':
+				return (v1 == v2) ? options.fn(this) : options.inverse(this);
+			case '===':
+				return (v1 === v2) ? options.fn(this) : options.inverse(this);
+			case '<':
+				return (v1 < v2) ? options.fn(this) : options.inverse(this);
+			case '<=':
+				return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+			case '>':
+				return (v1 > v2) ? options.fn(this) : options.inverse(this);
+			case '>=':
+				return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+			case '&&':
+				return (v1 && v2) ? options.fn(this) : options.inverse(this);
+			case '||':
+				return (v1 || v2) ? options.fn(this) : options.inverse(this);
+			default:
+				return options.inverse(this);
+		}
+	});
+
 	// Handlebarsjs function to write
 	this.updatePageView = function (data) {
 		that.currentView.products = data.products;
@@ -73,8 +97,6 @@ function Products(container, template) {
 		Products.updatePageView(Products.currentView);
 	};
 
-
-
 	// Product item constructor
 	this.productConstructor = function Product(value) {
 		var that = this;
@@ -87,6 +109,7 @@ function Products(container, template) {
 		this.price = value.price;
 		this.inBasket = false;
 		this.images = [];
+		this.tempQuantity = value.quantity;
 
 		this.changeStatus = function () {
 			if (this.inBasket) {

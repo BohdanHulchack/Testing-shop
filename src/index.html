@@ -79,12 +79,21 @@
                    <div class="product-cell--footer">
                      <form>
                        <div class="quantity">
-                         <input type="number", min="0", max="{{quantity}}", step="1", value="1", maxlength="2">
+                       {{#ifCond tempQuantity '<' 1 }}
+                       </div>
+                       <button class="product-cell--btn unactive" data-id = "{{id}}">
+                         <i class="product-cell--btn--price">${{price}}</i>
+                         <i class="product-cell--btn--cart"></i>
+                       </button>
+                       {{/ifCond}}
+                       {{#ifCond tempQuantity '>=' 1 }}
+                         <input type="number", min="0", max="{{tempQuantity}}", step="1", value="1", maxlength="2">
                        </div>
                        <button class="product-cell--btn" data-id = "{{id}}">
                          <i class="product-cell--btn--price">${{price}}</i>
                          <i class="product-cell--btn--cart"></i>
                        </button>
+                       {{/ifCond}}
                      </form>
                    </div>
                  </div>

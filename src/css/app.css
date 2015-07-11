@@ -356,9 +356,11 @@ ul {
     transition: all 300ms ease-out; }
     /* line 100, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
     .product-cell--btn:hover {
-      background: linear-gradient(50deg, #059b01 0%, #06ee00 85%);
       opacity: 0.8; }
-    /* line 105, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
+    /* line 103, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
+    .product-cell--btn.unactive {
+      background: linear-gradient(0deg, #727971 0%, #BEC2BE 100%); }
+    /* line 107, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
     .product-cell--btn--price {
       position: absolute;
       top: 20%;
@@ -367,7 +369,7 @@ ul {
       color: #fff;
       font-size: 15px;
       font-style: normal; }
-    /* line 116, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
+    /* line 118, /home/bohdan/Documents/AmazonKiller/frontend-test-data/src/scss/module/_product-cell.scss */
     .product-cell--btn--cart {
       position: absolute;
       top: 2px;

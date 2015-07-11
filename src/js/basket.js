@@ -15,11 +15,17 @@ function Basket(container, template) {
 
 	// Changes product quantity in Basket
 	this.changePurchaseItemsCount = function (productId, inputValue) {
+		var inputValue = +inputValue;
 		$.each(that.basketList, function (index, value) {
 			if (productId == this.id) {
-				this.productQuantity = +inputValue;
+				this.productQuantity = inputValue;
 				that.updateBasketView(Basket);
 				that.updateStepper();
+			}
+		});
+		$.each(Products.products, function (index, value) {
+			if (productId == this.id) {
+				this.tempQuantity = this.quantity - inputValue;
 			}
 		});
 	};
@@ -44,7 +50,7 @@ function Basket(container, template) {
 	this.purchase = function (productId, productQuantity) {
 
 		$.each(Products.products, function (index, value) {
-
+			var thatProduct = this;
 			//Checking either product is already in basket
 			if (productId == this.id && this.inBasket === true) {
 
@@ -54,8 +60,10 @@ function Basket(container, template) {
 					//If purchasing quantity is lesser than product max quantity, add it
 					if (productId == this.id && this.quantity > productQuantity && this.productQuantity < this.quantity) {
 						this.productQuantity += productQuantity;
+						newQuantity = this.productQuantity;
 						that.updateBasketView(Basket);
 						that.updateStepper();
+						thatProduct.tempQuantity -= productQuantity;
 						//If purchasing quantity is greater than product max quantity, add max product quantity
 					}
 				});
@@ -66,8 +74,10 @@ function Basket(container, template) {
 				that.basketList.push(new that.purchaseItemConstructor(value, productQuantity));
 				that.updateBasketView(Basket);
 				that.updateStepper();
+				thatProduct.tempQuantity -= productQuantity;
 			}
 		});
+		Products.updatePageView(Products);
 	},
 
 

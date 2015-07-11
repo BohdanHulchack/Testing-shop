@@ -98,8 +98,10 @@
     transition: all 300ms ease-out;
 
     &:hover {
-      background: linear-gradient(50deg, #059b01 0%, #06ee00 85%);
       opacity: 0.8;
+    }
+    &.unactive {
+      background: linear-gradient(0deg, #727971 0%, #BEC2BE 100%);
     }
 
     &--price {
