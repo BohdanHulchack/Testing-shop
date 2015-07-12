@@ -44,6 +44,11 @@ function Basket(container, template) {
 				that.updateStepper();
 			}
 		});
+		$.each(Products.products, function (index, value) {
+			if (productId == this.id) {
+				this.tempQuantity = this.quantity;
+			}
+		});
 	};
 
 	// Adding new product to Basket
@@ -86,7 +91,7 @@ function Basket(container, template) {
 		this.id = value.id;
 		this.title = value.title;
 		this.quantity = value.quantity;
-		this.productQuantity = +(productQuantity);
+		this.productQuantity = +productQuantity;
 		this.price = value.price;
 		this.totalPrice = null;
 
@@ -142,4 +147,4 @@ function Basket(container, template) {
 
 }
 
-var Basket = new Basket($('#basket_container'), $('#templateBasket'));
+	var Basket = new Basket($('#basket_container'), $('#templateBasket'));
