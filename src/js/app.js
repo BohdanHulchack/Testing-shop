@@ -1,12 +1,12 @@
 window.onload = function () {
 
 	//Taking data from localstorage and add them in Basket
-	if(localStorage.basketList) {
-		(function(){
-				var oldBasket = JSON.parse(localStorage.basketList);
-				$.each(oldBasket, function (index, value) {
-					Basket.purchase(this.id, this.productQuantity);
-				});
+	if (localStorage.basketList) {
+		(function () {
+			var oldBasket = JSON.parse(localStorage.basketList);
+			$.each(oldBasket, function (index, value) {
+				Basket.purchase(this.id, this.productQuantity);
+			});
 		})();
 	}
 };
@@ -18,7 +18,7 @@ $(document).ready(function () {
 	$(numberInputs).stepper();
 
 	//Added basket data to localstorage
-	$( window ).unload(function() {
+	$(window).unload(function () {
 		localStorage.clear();
 		localStorage.basketList = JSON.stringify(Basket.basketList);
 	});
@@ -32,7 +32,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		e.stopPropagation();
 
-		if(productQuantityInput[0]) {
+		if (productQuantityInput[0]) {
 			Basket.purchase(productId, productQuantity);
 		}
 
@@ -52,8 +52,7 @@ $(document).ready(function () {
 		if (inputValue === 0 || inputValue < 0) {
 			Basket.delatePurchaseItems(productId);
 			//If value greater than max product quantity set max product quantity
-		}
-		if (inputValue > poductMaxQuantity) {
+		} else if (inputValue > poductMaxQuantity) {
 			inputValue = poductMaxQuantity;
 			Basket.changePurchaseItemsCount(productId, inputValue);
 			//If everything is OK and it's a number, set it

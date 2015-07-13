@@ -1,4 +1,3 @@
-
 //Simple slider
 function Slider(sliders) {
 
@@ -23,6 +22,7 @@ function Slider(sliders) {
 			return parseInt(sliderList.css("margin-left"));
 		}
 
+		//Handler for clicking thumbnails
 		that.on('click', '.gallery-cell--list--item', function () {
 			var currentPhotoSrc = $(this).find('img')[0].src;
 
@@ -31,6 +31,7 @@ function Slider(sliders) {
 			}
 		});
 
+		//Handler for clicking arrows
 		that.on('click', 'a', function (e) {
 			if ($(this).hasClass('gallery-cell--left')) {
 
