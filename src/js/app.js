@@ -35,7 +35,7 @@ $(document).ready(function () {
 		if(productQuantityInput[0]) {
 			Basket.purchase(productId, productQuantity);
 		}
-		
+
 		return false;
 	});
 
@@ -44,7 +44,7 @@ $(document).ready(function () {
 		var productId = $(this).attr("data-id"),
 			inputValue = $(this).val(),
 			poductMaxQuantity = +($(this).attr("max")),
-			regNumersOnly = new RegExp('^[1-9]$');
+			regNumersOnly = new RegExp('^(0?[1-9]|[1-9][0-9])$');
 
 		e.stopPropagation();
 
@@ -61,7 +61,7 @@ $(document).ready(function () {
 			Basket.changePurchaseItemsCount(productId, inputValue);
 			//If it's something else set 1
 		} else {
-			Basket.delatePurchaseItems(productId);
+			Basket.deletePurchaseItems(productId);
 		}
 		Products.updatePageView(Products);
 	});

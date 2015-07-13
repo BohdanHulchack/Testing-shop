@@ -4,13 +4,13 @@ function Basket(container, template) {
 	this.basketList = [];
 	this.basketContainer = container;
 	this.basketTemplate = template;
+	this.basketTotalSum = 0;
+	this.basketTotalItems = 0;
 	this.templateBasket = Handlebars.compile(this.basketTemplate.html());
 	this.basketQuantity = $('#basket_count');
 	this.basketWrapper = $('#basket_wrapper');
 	this.basketItemContainer = $('#basket_container');
 	this.basketTotalPrice = $('#basket_total_price');
-	this.basketTotalSum = 0;
-	this.basketTotalItems = 0;
 
 
 	// Changes product quantity in Basket
@@ -30,8 +30,9 @@ function Basket(container, template) {
 		});
 	};
 
-	// Delate item from Basket
-	this.delatePurchaseItems = function (productId) {
+
+	// Delete item from Basket
+	this.deletePurchaseItems = function (productId) {
 		$.each(that.basketList, function (index, value) {
 			if (productId == this.id) {
 				$.each(Products.products, function (index, value) {
@@ -50,6 +51,7 @@ function Basket(container, template) {
 			}
 		});
 	};
+
 
 	// Adding new product to Basket
 	this.purchase = function (productId, productQuantity) {
@@ -112,6 +114,7 @@ function Basket(container, template) {
 		return this.basketContainer.append(this.templateBasket(data));
 	},
 
+
 	//Counts and places total cart quantity
 	this.basketCountQuantity = function () {
 		that.basketTotalItems = 0;
@@ -120,6 +123,8 @@ function Basket(container, template) {
 		});
 		that.basketQuantity.text(that.basketTotalItems);
 	},
+
+
 	//Counts and places total cart sum price
 	this.basketCountTotalSum = function () {
 		that.basketTotalSum = 0;
@@ -133,12 +138,14 @@ function Basket(container, template) {
 		}
 	},
 
+
 	//Initializing stepper input function on all basket items
 	this.basketCountItemSum = function () {
 		$.each(that.basketList, function (index, value) {
 			this.countTotalPrice();
 		});
 	},
+
 
 	//Initializing stepper function on all basket
 	this.updateStepper = function () {
@@ -147,4 +154,4 @@ function Basket(container, template) {
 
 }
 
-	var Basket = new Basket($('#basket_container'), $('#templateBasket'));
+var Basket = new Basket($('#basket_container'), $('#templateBasket'));

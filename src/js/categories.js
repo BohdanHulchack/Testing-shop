@@ -7,10 +7,12 @@ function Categories(container, template) {
 	this.categoriesTemplate = template;
 	this.templateCategories = Handlebars.compile(this.categoriesTemplate.html());
 
+
 	// Handlebarsjs function to write
 	this.updatePageView = function (data) {
 		return this.categoriesContainer.append(this.templateCategories(data));
 	};
+
 
 	// Category item constructor
 	this.categoryConstructor = function Category(value) {
@@ -18,10 +20,12 @@ function Categories(container, template) {
 		this.title = value.title;
 	};
 
+
 	// Creating new Category object from json data
 	this.addNewCategory = function (value) {
 		that.categories.push(new this.categoryConstructor(value));
 	};
+
 
 	// Get and parse data from JSON
 	this.getCategories = function (link) {
@@ -33,6 +37,7 @@ function Categories(container, template) {
 			that.updatePageView(Categories);
 		});
 	};
+
 
 	this.showCategory = function (catId) {
 		that.products = [];
@@ -47,12 +52,6 @@ function Categories(container, template) {
 		});
 		Products.updatePageView(Categories);
 	};
-
-
-
-
-
-
 }
 
 var Categories = new Categories($('#categories_container'), $('#templateCategories'));

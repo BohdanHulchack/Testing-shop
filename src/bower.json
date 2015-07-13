@@ -1,6 +1,6 @@
 {
   "name": "AmazonKiller",
-  "version": "0.1",
+  "version": "0.2.0",
   "authors": "Bohdan Hulchack <hulchak.bohdan@gmail.com>",
   "description": "",
   "license": "MIT",
@@ -13,9 +13,7 @@
   "dependencies": {
     "fastclick": "~1.0.3",
     "foundation": "~5.4.7",
-    "compass-mixins": "~0.12.6"
-  },
-  "devDependencies": {
+    "handlebars": "latest",
     "Stepper": "~3.0.8"
   }
 }

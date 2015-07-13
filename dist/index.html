@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
-    <title>AmazonKiller</title><!-- build:js css/app.min.css -->
-    <link href="css/foundation.css" rel="stylesheet">
-    <link href="css/app.css" rel="stylesheet">
-    <link href="css/jquery.fs.stepper.css" rel="stylesheet"><!-- /build -->
+    <title>AmazonKiller</title>
+    <link href="css/app.min.css" rel="stylesheet">
   </head>
   <body>
     <main class="row page_wrapper">
@@ -35,9 +33,9 @@
       <div class="l-catalog small-8 medium-8 large-8 xlarge-6 columns left">
         <ul id="categories_container" class="inline-list categories">
           <li>Please choose category:</li>
-          <li><a href="showAll">All</a></li><script id="templateCategories" type="text/x-handlebars-template">
+          <li> <a href="showAll">All</a></li><script id="templateCategories" type="text/x-handlebars-template">
           {{#each categories}}
-          <li>
+          <li class ="categories--option">
            <a href="{{id}}">
             {{title}}
            </a>
@@ -103,16 +101,7 @@
           </script>
         </ul>
       </div>
-    </main><!-- build:js js/app.min.js -->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/Stepper/jquery.fs.stepper.min.js"></script>
-    <script src="bower_components/handlebars/handlebars.min.js"></script>
-    <script src="js/basketAdoptive.js"></script>
-    <script src="js/slider.js"></script>
-    <script src="js/categories.js"></script>
-    <script src="js/galleries.js"></script>
-    <script src="js/product.js"></script>
-    <script src="js/basket.js"></script>
-    <script src="js/app.js"></script><!-- /build -->
+    </main>
+    <script src="js/app.min.js"></script>
   </body>
 </html>

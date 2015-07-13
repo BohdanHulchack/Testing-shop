@@ -1,6 +1,5 @@
 module.exports = function (grunt) {
 
-
 	require('load-grunt-tasks')(grunt);
 	require('time-grunt')(grunt);
 
@@ -8,18 +7,6 @@ module.exports = function (grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		app: 'src',
 		dist: 'dist',
-
-		php: {
-			dist: {
-				options: {
-					hostname: '127.0.0.1',
-					port: 9000,
-					base: '<%= app %>',
-					keepalive: false,
-					open: false
-				}
-			}
-		},
 
 		jade: {
 			compile: {
@@ -52,52 +39,48 @@ module.exports = function (grunt) {
 					'<%= app %>/bower_components/compass-mixins/lib'
 				]
 			},
-			dist: {
+			dev: {
 				options: {
-					outputStyle: 'extended'
+					outputStyle: 'expanded' //nested, compact, compressed, expanded
 				},
 				files: {
 					'<%= app %>/css/app.css': '<%= app %>/scss/app.scss',
 					'<%= app %>/css/foundation.css': '<%= app %>/scss/foundation.scss'
 				}
-			}
-		},
-
-		postcss: {
-			options: {
-				processors: [
-					require('cssgrace')
-				]
 			},
-			dist: {
-				src: ['<%= app %>/css/app.css'],
-				dest: '<%= app %>/css/app.cross.css'
-			}
-		},
-
-		autoprefixer: {
-			options: {
-				browsers: ['> 3%', 'ie 8', 'ie 9']
-			},
-			your_target: {
-				src: ['<%= app %>/css/app.cross.css'],
-				dest: '<%= app %>/css/app.cross2.css'
-			},
-		},
-
-		cssmin: {
-			options: {
-				shorthandCompacting: false,
-				roundingPrecision: -1
-			},
-			target: {
+			prod: {
+				options: {
+					sourceMap: false,
+					sourceComments: false,
+					outputStyle: 'expanded' //nested, compact, compressed, expanded
+				},
 				files: {
-					'<%= app %>/css/app.min.css': '<%= app %>/css/app.cross2.css'
+					'<%= dist %>/css/app.min.css': ['<%= app %>/scss/app.scss'],
+					'<%= dist %>/css/foundation.min.css': ['<%= app %>/scss/foundation.scss']
 				}
 			}
 		},
 
-
+		php: {
+			dist: {
+				options: {
+					hostname: '127.0.0.1',
+					port: 9000,
+					base: '<%= app %>',
+					keepalive: false,
+					open: false
+				}
+			},
+			prod: {
+				options: {
+					hostname: '127.0.0.1',
+					port: 1234,
+					base: '<%= dist %>',
+					keepalive: true,
+					open: true
+				}
+			}
+		},
 
 		browserSync: {
 			dist: {
@@ -128,39 +111,115 @@ module.exports = function (grunt) {
 
 		watch: {
 			sass: {
-				files: ['<%= app %>/scss/base/*.scss',
+				files: [
+					'<%= app %>/scss/base/*.scss',
 					'<%= app %>/scss/layout/*.scss',
 					'<%= app %>/scss/module/*.scss',
 					'<%= app %>/scss/state/*.scss',
 					'<%= app %>/scss/theme/*.scss',
 					'<%= app %>/scss/*.scss'
 				],
-				tasks: 'sass'
+				tasks: 'sass:dev'
 			},
 			jade: {
-				files: ['<%= app %>/jade/*.jade',
-					'<%= app %>/jade/modules/*.jade'
-				],
+				files: ['<%= app %>/jade/*.jade'],
 				tasks: 'jade'
 			}
+		},
+
+		processhtml: {
+			dist: {
+				options: {
+					process: true
+				},
+				files: {
+					'<%= dist %>/index.html' :'<%= app %>/index.html'
+				}
+			}
+		},
+
+		uglify: {
+			options: {
+				mangle: false
+			},
+			my_target: {
+				files: {
+					'<%= dist %>/js/app.min.js': [
+						'<%= app %>/bower_components/jquery/dist/jquery.min.js',
+						'<%= app %>/bower_components/Stepper/jquery.fs.stepper.min.js',
+						'<%= app %>/bower_components/handlebars/handlebars.min.js',
+						'<%= app %>/js/basketAdoptive.js',
+						'<%= app %>/js/slider.js',
+						'<%= app %>/js/categories.js',
+						'<%= app %>/js/galleries.js',
+						'<%= app %>/js/product.js',
+						'<%= app %>/js/basket.js',
+						'<%= app %>/js/app.js'
+					]
+				}
+			}
+		},
+
+		copy: {
+			main: {
+				files: [
+					{expand: true, flatten: true, src: [
+						'<%= app %>/img/*',
+					], dest: '<%= dist %>/img/'},
+
+					{expand: true, flatten: true, src: [
+						'<%= app %>/data/*'
+					], dest: '<%= dist %>/data/'},
+					[{
+						expand: true,
+						cwd: '<%= app %>/images/',
+						src: ['**'],
+						dest: '<%= dist %>/images/'
+					}],
+
+
+					{expand: true, flatten: true, src: [
+						'<%= app %>/css/jquery.fs.stepper-arrows.png'
+					], dest: '<%= dist %>/css/'}
+				]
+			}
+		},
+
+		concat: {
+			options: {
+				separator: '  '
+			},
+			dist: {
+				src: [
+					'<%= dist %>/css/foundation.min.css',
+					'<%= dist %>/css/app.min.css',
+					'<%= app %>/css/jquery.fs.stepper.css'
+				],
+				dest: '<%= dist %>/css/app.min.css'
+			}
 		}
+
 	});
 
 	grunt.registerTask('default', [
-		'sass',
-		'cssmin',
+		'sass:dev',
 		'jade',
-		'php:dist', // Start PHP Server 
-		'browserSync:dist', // Using the php instance as a proxy 
-		'watch' // Any other watch tasks you want to run 
+		'php:dist',
+		'browserSync:dist',
+		'watch'
 	]);
 
 	grunt.registerTask('build', [
-		'sass',
-		'postcss',
-		'autoprefixer',
-		'cssmin',
-		'jade'
+		'sass:prod',
+		'jade',
+		'uglify',
+		'copy',
+		'concat',
+		'processhtml'
+	]);
+
+	grunt.registerTask('show', [
+		'php:prod'
 	]);
 
 };

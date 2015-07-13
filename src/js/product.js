@@ -9,8 +9,9 @@ function Products(container, template) {
 		products: []
 	};
 
-	Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
 
+	// Handlebars helper for comparison and logical operators
+	Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
 		switch (operator) {
 			case '==':
 				return (v1 == v2) ? options.fn(this) : options.inverse(this);
@@ -33,7 +34,8 @@ function Products(container, template) {
 		}
 	});
 
-	// Handlebarsjs function to write
+
+	// Handlebars function to write
 	this.updatePageView = function (data) {
 		that.currentView.products = data.products;
 		that.productsContainer.html('');
@@ -42,10 +44,12 @@ function Products(container, template) {
 		that.updateStepper();
 	};
 
+
 	// Creating new Category object from json data
 	this.addNewProduct = function (value) {
 		that.products.push(new this.productConstructor(value));
 	};
+
 
 	// Get and parse data from JSON
 	this.getProducts = function (link) {
@@ -60,6 +64,7 @@ function Products(container, template) {
 		});
 	};
 
+
 	//  Searching for product that matches current gallery and binds them
 	this.findGalleries = function () {
 		$.each(Galleries.galleriesList, function (index, value) {
@@ -72,6 +77,7 @@ function Products(container, template) {
 			});
 		});
 	};
+
 
 	this.updateStepper = function () {
 		this.productsContainer.find("input[type='number']").stepper();
@@ -91,11 +97,13 @@ function Products(container, template) {
 		Products.updatePageView(Products.currentView);
 	};
 
+
 	this.sortToHigh = function () {
 		that.sortToLow();
 		Products.currentView.products = Products.currentView.products.reverse();
 		Products.updatePageView(Products.currentView);
 	};
+
 
 	// Product item constructor
 	this.productConstructor = function Product(value) {
@@ -118,6 +126,7 @@ function Products(container, template) {
 				this.inBasket = true;
 			}
 		};
+
 	};
 }
 

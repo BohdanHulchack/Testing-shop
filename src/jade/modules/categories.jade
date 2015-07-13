@@ -1,11 +1,11 @@
 ul#categories_container.inline-list.categories
-  li.categories--title Please choose category:
-  li.categories--option 
+  li Please choose category:
+  li
     a(href="showAll") All
   |<script id="templateCategories" type="text/x-handlebars-template">
   |{{#each categories}}
-  |<li class ="categories--option">
-  |  <a href="{{id}}" alt="{{title}}" >
+  |<li>
+  |  <a href="{{id}}">
   |   {{title}}
   |  </a>
   |</li>

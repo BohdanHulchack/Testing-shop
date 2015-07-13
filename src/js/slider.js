@@ -1,3 +1,4 @@
+
 //Simple slider
 function Slider(sliders) {
 
@@ -5,8 +6,9 @@ function Slider(sliders) {
 		var that = $(this),
 			sliderList = that.find('[data-gallery-list]'),
 			sliderItems = that.find('[data-gallery-list] > li').length,
-			sliderMainPhoto = that.find('[data-gallery-main] > img')[0];
-		sliderWidth = sliderItems * 54;
+			sliderMainPhoto = that.find('[data-gallery-main] > img')[0],
+			sliderWidth = sliderItems * 54,
+			sliderMinMargin;
 
 		if (sliderItems > 3) {
 			sliderMinMargin = -((sliderItems - 3) * 54);
@@ -22,8 +24,10 @@ function Slider(sliders) {
 		}
 
 		that.on('click', '.gallery-cell--list--item', function () {
-			if (sliderMainPhoto.src !== $(this).find('img')[0].src) {
-				sliderMainPhoto.src = $(this).find('img')[0].src;
+			var currentPhotoSrc = $(this).find('img')[0].src;
+
+			if (sliderMainPhoto.src !== currentPhotoSrc) {
+				sliderMainPhoto.src = currentPhotoSrc;
 			}
 		});
 
@@ -32,14 +36,15 @@ function Slider(sliders) {
 
 				if (getCurrentMargin() <= 0 && getCurrentMargin() > sliderMinMargin) {
 					sliderList.animate({
-						marginLeft: "-=54",
+						marginLeft: "-=54"
 					}, 300);
 				}
 
 			} else if ($(this).hasClass('gallery-cell--right')) {
+
 				if (getCurrentMargin() <= 0 && getCurrentMargin() <= sliderMinMargin) {
 					sliderList.animate({
-						marginLeft: "+=54",
+						marginLeft: "+=54"
 					}, 300);
 				}
 			}
@@ -47,5 +52,6 @@ function Slider(sliders) {
 			e.stopPropagation();
 			return false;
 		});
+
 	});
 }
